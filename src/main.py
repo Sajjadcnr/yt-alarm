@@ -16,7 +16,7 @@ import sys
 from config import Config, ConfigError
 from formatter import (
     build_error_report,
-    build_report,
+    build_report_messages,
     build_stats_text_from_saved,
     build_videos_text_from_saved,
 )
@@ -50,10 +50,12 @@ def run() -> int:
     comparison, new_stats = compare_and_build(previous_stats, channel, videos)
     new_stats["telegram"] = previous_stats.get("telegram", {})
 
-    report = build_report(comparison, tz_name=config.timezone, max_videos=config.max_videos_in_report)
+    report_messages = build_report_messages(
+        comparison, tz_name=config.timezone, max_videos=config.max_videos_in_report
+    )
 
     try:
-        telegram.send_message(config.telegram_chat_id, report)
+        telegram.send_report(config.telegram_chat_id, report_messages)
     except TelegramAPIError as exc:
         print(f"Telegram send error: {exc}", file=sys.stderr)
         return 1

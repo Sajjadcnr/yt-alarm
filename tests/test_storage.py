@@ -77,6 +77,36 @@ def test_growth_calculated_on_second_run():
     assert comparison.videos[0].is_new is False
 
 
+def test_channel_and_video_growth_zero_when_unchanged():
+    previous = {
+        "channel": {"subscribers": 1000, "views": 50000, "video_count": 1},
+        "videos": {"v1": {"title": "Video", "views": 100, "likes": 10, "comments": 1, "published_at": "x"}},
+    }
+    channel = make_channel(subscribers=1000, views=50000, video_count=1)
+    videos = [make_video("v1", 100)]
+
+    comparison, _ = compare_and_build(previous, channel, videos)
+
+    assert comparison.channel.subscriber_growth == 0
+    assert comparison.channel.view_growth == 0
+    assert comparison.videos[0].view_growth == 0
+
+
+def test_channel_and_video_growth_negative_when_decreased():
+    previous = {
+        "channel": {"subscribers": 1000, "views": 50000, "video_count": 1},
+        "videos": {"v1": {"title": "Video", "views": 500, "likes": 10, "comments": 1, "published_at": "x"}},
+    }
+    channel = make_channel(subscribers=998, views=49800, video_count=1)
+    videos = [make_video("v1", 260)]
+
+    comparison, _ = compare_and_build(previous, channel, videos)
+
+    assert comparison.channel.subscriber_growth == -2
+    assert comparison.channel.view_growth == -200
+    assert comparison.videos[0].view_growth == -240
+
+
 def test_new_video_detected():
     previous = {
         "channel": {"subscribers": 1000, "views": 50000, "video_count": 1},

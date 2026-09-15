@@ -37,14 +37,17 @@ class TelegramClient:
     def _url(self, method: str) -> str:
         return f"{TELEGRAM_API_BASE}/bot{self._bot_token}/{method}"
 
-    def send_message(self, chat_id: str, text: str) -> None:
+    def send_message(self, chat_id: str, text: str, parse_mode: str | None = None) -> None:
         last_error: Exception | None = None
+        data = {"chat_id": chat_id, "text": text}
+        if parse_mode:
+            data["parse_mode"] = parse_mode
 
         for attempt in range(1, MAX_RETRIES + 1):
             try:
                 resp = self._session.post(
                     self._url("sendMessage"),
-                    data={"chat_id": chat_id, "text": text},
+                    data=data,
                     timeout=REQUEST_TIMEOUT,
                 )
                 if resp.ok:
@@ -59,6 +62,12 @@ class TelegramClient:
                 time.sleep(RETRY_BACKOFF_SECONDS * attempt)
 
         raise TelegramAPIError(f"Telegram sendMessage failed after {MAX_RETRIES} attempts") from last_error
+
+    def send_report(self, chat_id: str, messages: list[str]) -> None:
+        """Send a multi-part report (see formatter.build_report_messages) as
+        a sequence of Markdown-formatted messages, in order."""
+        for message in messages:
+            self.send_message(chat_id, message, parse_mode="Markdown")
 
     def get_updates(self, offset: int | None = None) -> list[Command]:
         params: dict[str, object] = {"timeout": 0}
