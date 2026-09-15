@@ -1,0 +1,75 @@
+name: YouTube Monitor
+
+on:
+  schedule:
+    # Runs at HH:17 every hour. Avoid :00 since GitHub Actions scheduled
+    # workflows queue up around the top of the hour and can be delayed.
+    - cron: "17 * * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: youtube-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run monitor
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MAX_VIDEOS_IN_REPORT: ${{ vars.MAX_VIDEOS_IN_REPORT || '20' }}
+          TIMEZONE: Asia/Tehran
+          PYTHONPATH: src
+        run: python src/main.py
+
+      - name: Commit updated stats.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- data/stats.json; then
+            echo "No changes to data/stats.json"
+            exit 0
+          fi
+
+          for attempt in 1 2 3 4 5; do
+            git add data/stats.json
+            git commit -m "chore: update stats.json [skip ci]"
+
+            git fetch origin "${GITHUB_REF_NAME}"
+            if git rebase "origin/${GITHUB_REF_NAME}"; then
+              if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                echo "Pushed successfully on attempt ${attempt}"
+                exit 0
+              fi
+            else
+              git rebase --abort
+            fi
+
+            echo "Push attempt ${attempt} failed, retrying..."
+            sleep $((attempt * 3))
+          done
+
+          echo "Failed to push stats.json after multiple attempts" >&2
+          exit 1
