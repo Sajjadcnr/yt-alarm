@@ -1,9 +1,9 @@
 {
   "channel": {
-    "subscribers": 8,
-    "updated_at": "2026-09-15T19:41:15.811519+00:00",
+    "subscribers": 15,
+    "updated_at": "2026-09-15T22:52:35.195771+00:00",
     "video_count": 5,
-    "views": 0
+    "views": 2200
   },
   "telegram": {
     "last_update_id": null
@@ -11,21 +11,21 @@
   "videos": {
     "FuhMAlHtWlw": {
       "comments": 3,
-      "likes": 54,
+      "likes": 62,
       "missing_runs": 0,
       "published_at": "2026-09-14T18:13:26Z",
       "status": "active",
       "title": "خاطره گواهینامه گرفتن رئیس 🚗 | علی بیگزموگ",
-      "views": 1612
+      "views": 2022
     },
     "Wi31A38NaaY": {
       "comments": 1,
-      "likes": 23,
+      "likes": 54,
       "missing_runs": 0,
       "published_at": "2026-09-14T23:01:57Z",
       "status": "active",
       "title": "عشق بی‌حد و مرز علی بیگزموگ به دونیتور 😂 #خنده_دار #طنز_اجتماعی #جوان_ایرانی #بدبختی  #خاطره #رئیس",
-      "views": 377
+      "views": 458
     },
     "f957qVktfJA": {
       "comments": 0,
@@ -34,25 +34,25 @@
       "published_at": "2026-09-15T10:36:32Z",
       "status": "active",
       "title": "رئیس چطور بیزنس میکنه؟ وضعیت اقتصادی خوب نیست!",
-      "views": 9
+      "views": 24
     },
     "g-ksFRPZk8A": {
       "comments": 0,
-      "likes": 70,
+      "likes": 72,
       "missing_runs": 0,
       "published_at": "2026-09-14T18:42:00Z",
       "status": "active",
       "title": "چجوری دور یک فرمون بزنیم با رئیس | bigezmoge #امتحان_رانندگی  #خنده_دار #رئیس #خاطره #علی_بیگزموگ",
-      "views": 2646
+      "views": 2763
     },
     "ko15Dw9lH8A": {
       "comments": 0,
-      "likes": 16,
+      "likes": 29,
       "missing_runs": 0,
       "published_at": "2026-09-15T13:57:53Z",
       "status": "active",
       "title": "رئیس بزرگ و مهم‌ترین نصیحت‌های زندگی! #رئیس #خاطره #خنده_دار",
-      "views": 433
+      "views": 705
     }
   }
 }
