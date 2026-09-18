@@ -1,9 +1,9 @@
 {
   "channel": {
     "subscribers": 22,
-    "updated_at": "2026-09-18T14:29:59.370211+00:00",
+    "updated_at": "2026-09-18T18:26:50.691199+00:00",
     "video_count": 7,
-    "views": 12726
+    "views": 13374
   },
   "telegram": {
     "last_update_id": null
@@ -11,30 +11,30 @@
   "videos": {
     "1Zo6XNISr4k": {
       "comments": 0,
-      "likes": 47,
+      "likes": 49,
       "missing_runs": 0,
       "published_at": "2026-09-16T16:10:14Z",
       "status": "active",
       "title": "هدشات باورنکردنی رئیس با تفنگ بادی! #رئیس #خاطره #خنده_دار #علی_بیگزموگ #یوتیوب_فارسی#امتحان_رانندگی",
-      "views": 1289
+      "views": 1328
     },
     "FuhMAlHtWlw": {
       "comments": 3,
-      "likes": 85,
+      "likes": 84,
       "missing_runs": 0,
       "published_at": "2026-09-14T18:13:26Z",
       "status": "active",
       "title": "خاطره گواهینامه گرفتن رئیس 🚗 | علی بیگزموگ",
-      "views": 4682
+      "views": 4684
     },
     "Wi31A38NaaY": {
       "comments": 1,
-      "likes": 72,
+      "likes": 73,
       "missing_runs": 0,
       "published_at": "2026-09-14T23:01:57Z",
       "status": "active",
       "title": "عشق بی‌حد و مرز علی بیگزموگ به دونیتور 😂 #خنده_دار #طنز_اجتماعی #جوان_ایرانی #بدبختی  #خاطره #رئیس",
-      "views": 1518
+      "views": 1520
     },
     "Y4G0pA1lBGQ": {
       "comments": 1,
@@ -43,7 +43,7 @@
       "published_at": "2026-09-16T13:53:08Z",
       "status": "active",
       "title": "رئیس چطور زندانی شد؟! 😳 خاطره زندان رفتن علی بیگزموگ",
-      "views": 176
+      "views": 184
     },
     "f957qVktfJA": {
       "comments": 0,
@@ -52,25 +52,25 @@
       "published_at": "2026-09-15T10:36:32Z",
       "status": "active",
       "title": "رئیس چطور بیزنس میکنه؟ وضعیت اقتصادی خوب نیست!",
-      "views": 147
+      "views": 188
     },
     "g-ksFRPZk8A": {
       "comments": 0,
-      "likes": 87,
+      "likes": 88,
       "missing_runs": 0,
       "published_at": "2026-09-14T18:42:00Z",
       "status": "active",
       "title": "چجوری دور یک فرمون بزنیم با رئیس | bigezmoge #امتحان_رانندگی  #خنده_دار #رئیس #خاطره #علی_بیگزموگ",
-      "views": 3661
+      "views": 3811
     },
     "ko15Dw9lH8A": {
       "comments": 0,
-      "likes": 58,
+      "likes": 59,
       "missing_runs": 0,
       "published_at": "2026-09-15T13:57:53Z",
       "status": "active",
       "title": "رئیس بزرگ و مهم‌ترین نصیحت‌های زندگی! #رئیس #خاطره #خنده_دار",
-      "views": 2002
+      "views": 2022
     }
   }
 }
