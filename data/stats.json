@@ -1,9 +1,9 @@
 {
   "channel": {
     "subscribers": 31,
-    "updated_at": "2026-10-03T17:14:38.519548+00:00",
+    "updated_at": "2026-10-03T19:50:50.966422+00:00",
     "video_count": 7,
-    "views": 19715
+    "views": 19825
   },
   "telegram": {
     "last_update_id": null
@@ -11,12 +11,12 @@
   "videos": {
     "1Zo6XNISr4k": {
       "comments": 0,
-      "likes": 73,
+      "likes": 72,
       "missing_runs": 0,
       "published_at": "2026-09-16T16:10:14Z",
       "status": "active",
       "title": "هدشات باورنکردنی رئیس با تفنگ بادی! #رئیس #خاطره #خنده_دار #علی_بیگزموگ #یوتیوب_فارسی#امتحان_رانندگی",
-      "views": 1708
+      "views": 1709
     },
     "FuhMAlHtWlw": {
       "comments": 4,
@@ -25,16 +25,16 @@
       "published_at": "2026-09-14T18:13:26Z",
       "status": "active",
       "title": "خاطره گواهینامه گرفتن رئیس 🚗 | علی بیگزموگ",
-      "views": 6247
+      "views": 6249
     },
     "Wi31A38NaaY": {
       "comments": 3,
-      "likes": 220,
+      "likes": 221,
       "missing_runs": 0,
       "published_at": "2026-09-14T23:01:57Z",
       "status": "active",
       "title": "عشق بی‌حد و مرز علی بیگزموگ به دونیتور 😂 #خنده_دار #طنز_اجتماعی #جوان_ایرانی #بدبختی  #خاطره #رئیس",
-      "views": 4490
+      "views": 4521
     },
     "Y4G0pA1lBGQ": {
       "comments": 2,
@@ -43,7 +43,7 @@
       "published_at": "2026-09-16T13:53:08Z",
       "status": "active",
       "title": "رئیس چطور زندانی شد؟! 😳 خاطره زندان رفتن علی بیگزموگ",
-      "views": 445
+      "views": 446
     },
     "f957qVktfJA": {
       "comments": 0,
@@ -70,7 +70,7 @@
       "published_at": "2026-09-15T13:57:53Z",
       "status": "active",
       "title": "رئیس بزرگ و مهم‌ترین نصیحت‌های زندگی! #رئیس #خاطره #خنده_دار",
-      "views": 2104
+      "views": 2105
     }
   }
 }
